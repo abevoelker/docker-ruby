@@ -3,6 +3,8 @@ MAINTAINER Abe Voelker <abe@abevoelker.com>
 
 # Ignore APT warnings about not having a TTY
 ENV DEBIAN_FRONTEND noninteractive
+# Set $PATH so that non-login shells will see the Ruby binaries
+ENV PATH $PATH:/opt/rubies/ruby-2.1.2/bin
 
 # Ensure UTF-8 locale
 RUN echo "LANG=\"en_US.UTF-8\"" > /etc/default/locale
