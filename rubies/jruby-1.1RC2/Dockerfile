@@ -5,7 +5,7 @@ RUN \
 # Install build dependencies
   apt-get update &&\
   DEBIAN_FRONTEND=noninteractive apt-get install -y \
-  wget build-essential &&\
+  ruby wget build-essential &&\
 # Install ruby-install
   cd /tmp &&\
   wget -O ruby-install-0.5.0.tar.gz https://github.com/postmodern/ruby-install/archive/v0.5.0.tar.gz &&\
@@ -18,11 +18,11 @@ RUN \
   PATH=$PATH:/opt/rubies/jruby-1.1RC2/bin gem install bundler &&\
 # Remove build dependencies, clean up APT and temp files
   apt-get clean &&\
-  DEBIAN_FRONTEND=noninteractive apt-get remove --purge -y wget build-essential &&\
+  DEBIAN_FRONTEND=noninteractive apt-get remove --purge -y ruby wget build-essential &&\
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Set $PATH so that non-login shells will see the Ruby binaries
-ENV PATH $PATH:/opt/rubies/jruby-1.1RC2/bin
+ENV PATH /opt/rubies/jruby-1.1RC2/bin:$PATH
 
 # Add Ruby binaries to login shells's $PATH
 COPY ./ruby.sh /etc/profile.d/ruby.sh
