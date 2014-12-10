@@ -1,0 +1,1 @@
+export PATH="$PATH:/opt/rubies/jruby-1.6.8/bin"

@@ -1,0 +1,1 @@
+export PATH="$PATH:/opt/rubies/ruby-1.8.5-p115/bin"
