@@ -6,7 +6,7 @@ import os.path
 import os
 
 VERSION_URL = "https://raw.githubusercontent.com/postmodern/ruby-versions/master/{0}/versions.txt"
-RUBY_INTERPRETERS = ['ruby', 'jruby', 'rubinius']
+RUBY_INTERPRETERS = ['ruby', 'jruby']
 RUBIES_DIR = 'rubies'
 
 RubyVersion = namedtuple("RubyVersion", "interpreter version")
