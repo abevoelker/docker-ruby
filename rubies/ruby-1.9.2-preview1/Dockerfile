@@ -15,7 +15,7 @@ RUN \
 # Install Ruby
   ruby-install ruby 1.9.2-preview1 &&\
 # Install bundler globally
-  PATH=$PATH:/opt/rubies/ruby-1.9.2-preview1/bin gem install bundler &&\
+  PATH=/opt/rubies/ruby-1.9.2-preview1/bin:$PATH gem install bundler &&\
 # Remove build dependencies, clean up APT and temp files
   apt-get clean &&\
   DEBIAN_FRONTEND=noninteractive apt-get remove --purge -y ruby wget build-essential &&\
