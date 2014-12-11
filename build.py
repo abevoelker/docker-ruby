@@ -4,6 +4,7 @@ from collections import namedtuple
 import itertools
 import os.path
 import os
+import re
 
 VERSION_URL = "https://raw.githubusercontent.com/postmodern/ruby-versions/master/{0}/versions.txt"
 RUBY_INTERPRETERS = ['ruby', 'jruby']
@@ -24,6 +25,10 @@ def get_ruby_versions(i):
 
 nested_versions = [get_ruby_versions(interp) for interp in RUBY_INTERPRETERS]
 versions = list(itertools.chain.from_iterable(nested_versions))
+
+# filter out prerelease interpreters (RC, preview)
+# NON_PRERELEASE_REGEX = re.compile("-p?[\d\.]+$")
+# versions = [x for x in versions if NON_PRERELEASE_REGEX.search("-" + x.version)]
 
 for v in versions:
     ruby_version            = v.interpreter + ' ' + v.version
