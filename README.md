@@ -5,7 +5,7 @@ MRI Ruby and JRuby using what's currently available to
 [`ruby-install`][ruby-install].
 
 Look in the `rubies/` directory to see available
-[Docker Hub tags][docker-hub-tags], e.g. `abevoelker/ruby:ruby-2.1.5`.
+[Docker Hub tags][docker-hub-tags], e.g. `abevoelker/ruby:ruby-2.2.0`.
 
 The `abevoelker/ruby:latest` tag should reflect the latest stable MRI
 interpreter.
