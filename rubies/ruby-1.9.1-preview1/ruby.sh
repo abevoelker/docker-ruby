@@ -1,1 +1,0 @@
-export PATH="$PATH:/opt/rubies/ruby-1.9.1-preview1/bin"
